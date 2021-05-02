@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import ReactDOM from "react-dom";
 import './index.css'
 
-
+//отправка сообщения в массив через кнопку, использование state и ref
 
 const App = () => {
    const [messages, setMessages] = useState([]);
