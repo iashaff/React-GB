@@ -8,6 +8,13 @@ html, body {
     font-family: 'Signika', sans-serif;
 }
 
+form {
+    display: flex;
+    margin-top: 1em;
+    justify-content: space-between;
+    min-width: 70%;
+}
+
 .boxMessage {
    display: flex;
    flex-direction: column; 
@@ -20,10 +27,7 @@ html, body {
 }
 
 textarea {
-    min-width: 50%;
-    min-height: 20vh;
-    margin-bottom: 1em;
-    background-color: rgb(190, 217, 243);
+    min-width: 80%;
     border-radius: 5px;
 }
 
@@ -40,3 +44,25 @@ button:focus {
     cursor: pointer;
     transform: scale(1.2);
 }
+
+.answer-box {
+    border: 1px solid black;
+    min-width: 70%;
+    min-height: 70vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.bot-message {
+    background-color: lightgrey;
+    text-align: left;
+    
+}
+
+.writer-message {
+    background-color: lightskyblue;
+    text-align: right;
+    
+}
+
+
