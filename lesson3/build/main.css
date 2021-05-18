@@ -1,0 +1,58 @@
+* {
+  box-sizing: border-box; }
+
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%; }
+
+form {
+  display: flex;
+  margin-top: 1em;
+  justify-content: space-between;
+  min-width: 70%; }
+
+.boxMessage {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  max-width: 40%;
+  min-height: 50vh;
+  align-items: center;
+  margin: 0 auto;
+  padding: 5em; }
+
+button {
+  border-radius: 5px;
+  border: none;
+  background-color: slateblue;
+  padding: 0.5em 1em;
+  color: #fff; }
+
+button:hover,
+button:focus {
+  cursor: pointer;
+  transform: scale(1.2); }
+
+.answer-box {
+  border: 1px solid black;
+  min-width: 70%;
+  min-height: 70vh;
+  display: flex;
+  flex-direction: column;
+  overflow-y: scroll; }
+
+.bot-message {
+  background-color: lightgrey;
+  align-self: flex-start;
+  padding: 5px 15px;
+  border-radius: 20px; }
+
+.writer-message {
+  background-color: lightskyblue;
+  align-self: flex-end;
+  padding: 5px 15px;
+  border-radius: 20px; }
+
+
+/*# sourceMappingURL=main.css.map*/
