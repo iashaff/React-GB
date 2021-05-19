@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useCallback } from "react";
+import React, { useEffect, useState } from "react";
 import { useParams, Redirect } from "react-router";
 import { authors } from "../utils/constans";
 import Messages from "./Messages";
@@ -13,27 +13,23 @@ const messagesAuthor =
 
 const MessageField = () => {
     const [messages, setMessages] = useState(messagesAuthor);
-    const params = useParams;
+    const params = useParams ();
     const { chatId } = params;
     console.log(params)
 
-    const handleAddComment = useCallback(
-        (newMessage) => {
-            setMessages((prevMessages) => ({
-                ...prevMessages,
-                [chatId]: [...prevMessages[chatId], newMessage],
-            }));
-        },
-        [chatId]
-    );
+    const handleAddComment = (newMessage) => {
+        setMessages((prevMessages) => ({
+            ...prevMessages, [chatId]: [...prevMessages[chatId], newMessage],
+        })), [chatId]
+    }
 
     useEffect(() => {
         let botAnswerTimeout;
-        if (!messages.length) {
+        if (!messages[chatId]?.length) {
             return
         }
 
-        const lastMessage = messages[chatId][messages[chatId]?.length - 1];
+        const lastMessage = messages[chatId][messages[chatId].length - 1];
         if (lastMessage.author === authors.human) {
             if (lastMessage.text === "привет" || lastMessage.text === "Привет") {
                 botAnswerTimeout = setTimeout(() => {
@@ -53,15 +49,15 @@ const MessageField = () => {
         return () => clearTimeout(botAnswerTimeout)
     }, [messages])
 
-    if (!chatId || !messages[chatId]) {
-        return <Redirect to="/" />
-    }
+    // if (!chatId || !messages[chatId]) {
+    //     return <Redirect to="/" />
+    // }
 
     return (
         <div className="boxMessage">
 
             <div className="answer-box">
-                {messages[chatId].map((message) => <div
+                {messages[chatId].map((message) => <div 
                     className={`message ${message.author === authors.bot ? "bot-message" : "writer-message"}`}>
                     <div>{message.text}</div>
                     <div className="message-sender">{message.author}</div></div>)}
@@ -74,3 +70,4 @@ const MessageField = () => {
 };
 
 export default MessageField;
+

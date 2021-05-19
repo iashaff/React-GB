@@ -14,8 +14,8 @@ const ChatList = () => {
         <>
             <List className="chatlist">
 
-                {chats.map(chat => (
-                    <Link key={chats.id} to={`chats/${chat.id}`}>
+                {chats.map((chat) => (
+                    <Link key={chats.id} to={`/chats/${chat.id}`}>
                         <ListItem >
                             <ListItemAvatar>
                                 <Avatar>{chat.avatar}</Avatar>
@@ -31,4 +31,4 @@ const ChatList = () => {
     )
 }
 
-export default ChatList
+export default ChatList;

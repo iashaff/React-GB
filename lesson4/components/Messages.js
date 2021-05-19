@@ -24,7 +24,7 @@ const Messages = ({ onAddMessage }) => {
 
     return (
       
-        <form onSubmit={(handleSubmit)}>
+        <form onSubmit={handleSubmit}>
             <TextField  id="outlined-basic" label="Enter your message" variant="outlined"
              value={text} onChange={handleAddText}>    
              </TextField>
